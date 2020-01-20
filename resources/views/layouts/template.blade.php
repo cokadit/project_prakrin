@@ -90,7 +90,7 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class=" navigation-header"><span>General</span><i class=" ft-minus" data-toggle="tooltip" data-placement="right" data-original-title="General"></i>
             </li>
-            <li class=" nav-item"><a href="{{@url('/admin')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
+            <li class=" nav-item {{ Request::path() ==  'admin' ? 'active' : '' }} "><a href="{{@url('/admin')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
             </li>
             <li class=" nav-item"><a href="#"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Layouts</span></a>
                 <ul class="menu-content">
@@ -104,10 +104,9 @@
             
             <li class=" navigation-header"><span>Content</span><i class=" ft-minus" data-toggle="tooltip" data-placement="right" data-original-title="Apps"></i>
             </li>
-            <li class=" nav-item"><a href="{{asset('admins/html/ltr/template/app-todo.html')}}"><i class="ft-check-square"></i><span class="menu-title" data-i18n="">Tambah Content</span></a></li>
-            <li class=" nav-item"><a href="#"><i class="ft-share"></i><span class="menu-title" data-i18n="">Update Content</span></a></li>
-            <li class=" nav-item"><a href="#"><i class="ft-image"></i><span class="menu-title" data-i18n="">Change picture</span></a></li>
-            <li class=" nav-item"><a href="#"><i class="ft-slash"></i><span class="menu-title" data-i18n="">Delete Content</span></a></li>
+            <li class=" nav-item {{ Request::path() ==  'admin/createcontent' ? 'active' : '' }}"><a href="{{url('/admin/createcontent')}}"><i class="ft-check-square"></i><span class="menu-title" data-i18n="">Tambah Content</span></a></li>
+            <li class=" nav-item {{ Request::path() ==  'admin/editcontent' ? 'active' : '' }}"><a href="{{url('/admin/editcontent')}}"><i class="ft-share"></i><span class="menu-title" data-i18n="">Update Content</span></a></li>
+            <li class=" nav-item {{ Request::path() ==  'admin/deletecontent' ? 'active' : '' }}"><a href="{{url('/admin/deletecontent')}}"><i class="ft-slash"></i><span class="menu-title" data-i18n="">Delete Content</span></a></li>
         </ul>
     </div>
 </div>

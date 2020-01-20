@@ -11,8 +11,11 @@
 |
 */
 
-Route::view('/admin','admin.index');
 Route::view('/','welcome');
+Route::view('/admin','admin.index');
+Route::view('/admin/createcontent','admin.create');
+Route::view('/admin/editcontent','admin.edit');
+Route::view('/admin/deletecontent','admin.delete');
 
 Auth::routes();
 
