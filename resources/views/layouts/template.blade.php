@@ -10,6 +10,7 @@
     <meta name="keywords" content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Admin</title>
+    <script src="https://kit.fontawesome.com/a79caf36ea.js" crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" href="{{ asset('admins/asset/app-assets/images/ico/apple-icon-120.png')}}">
     <link rel="shortcut icon" type="image/x-icon" href="admins/asset/app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
@@ -90,18 +91,7 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class=" navigation-header"><span>General</span><i class=" ft-minus" data-toggle="tooltip" data-placement="right" data-original-title="General"></i>
             </li>
-            <li class=" nav-item {{ Request::path() ==  'admin' ? 'active' : '' }} "><a href="{{@url('/admin')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
-            </li>
-            <li class=" nav-item"><a href="#"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Layouts</span></a>
-                <ul class="menu-content">
-                    <li><a class="menu-item" href="layout-1-column.html">Section Home</a></li>
-                    <li><a class="menu-item" href="layout-1-column.html">Section About</a></li>
-                    <li><a class="menu-item" href="layout-1-column.html">Section Testimonial</a></li>
-                    <li><a class="menu-item" href="layout-1-column.html">Section Services</a></li>
-                    <li><a class="menu-item" href="layout-1-column.html">Section Blog</a></li>
-                </ul>
-            </li>
-            
+            <li class=" nav-item {{ Request::path() ==  'admin' ? 'active' : '' }} "><a href="{{@url('/admin')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a></li>
             <li class=" navigation-header"><span>Content</span><i class=" ft-minus" data-toggle="tooltip" data-placement="right" data-original-title="Apps"></i>
             </li>
             <li class=" nav-item {{ Request::path() ==  'admin/createcontent' ? 'active' : '' }}"><a href="{{url('/admin/createcontent')}}"><i class="ft-check-square"></i><span class="menu-title" data-i18n="">Tambah Content</span></a></li>
