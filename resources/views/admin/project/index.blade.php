@@ -1,7 +1,11 @@
 @extends('/layouts.template')
-
+@section('title','Our projects')
 @section('content')
-
+<div class="row">
+    <div class="col-5">
+        <a href="/admin/project/create" class="btn btn-success mr-1 mb-1">Add Project</a>
+    </div>
+</div>
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -37,7 +41,7 @@
                                         <td>Project Prakrin</td>
                                         <td>Project untuk prakrin di maxsol</td>
                                         <td class="text-center">
-                                            <a href="#" class="btn btn-icon btn-success" title="Detail"><i class="ft-eye"></i></a>
+                                            <a href="/admin/create" class="btn btn-icon btn-success" title="Detail"><i class="ft-eye"></i></a>
                                             <a href="#" class="btn btn-icon btn-primary" title="Edit"><i class="ft-edit"></i></a>
                                             <button type="submit" class="btn btn-icon btn-danger" title="Delete"><i class="ft-slash"></i></button>
                                         </td>

@@ -1,6 +1,11 @@
 @extends('/layouts.template')
-
+@section('title','Our Teams')
 @section('content')
+<div class="row">
+    <div class="col-5">
+        <a href="/admin/team/create" class="btn btn-success mr-1 mb-1">Add Project</a>
+    </div>
+</div>
 <div class="row">
     <div class="col-12">
         <div class="card">

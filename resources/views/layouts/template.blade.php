@@ -9,7 +9,7 @@
     <meta name="description" content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Admin</title>
+    <title>@yield('title','Admin')</title>
     <script src="https://kit.fontawesome.com/a79caf36ea.js" crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" href="{{ asset('admins/asset/app-assets/images/ico/apple-icon-120.png')}}">
     <link rel="shortcut icon" type="image/x-icon" href="admins/asset/app-assets/images/ico/favicon.ico">

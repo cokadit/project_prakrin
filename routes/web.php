@@ -18,9 +18,13 @@ Route::view('/admin/editcontent','admin.edit');
 Route::view('/admin/deletecontent','admin.delete');
 // project
 Route::get('/admin/project','ProjectsController@index');
+Route::get('/admin/project/create','ProjectsController@create');
+Route::post('/admin/project/store','ProjectsController@store');
 
 // team
 Route::get('/admin/team','TeamsController@index');
+Route::get('/admin/team/create','TeamsController@create');
+Route::post('/admin/project/store','TeamsController@store');
 
 Auth::routes();
 
