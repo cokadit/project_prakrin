@@ -9,3 +9,45 @@ NOTE:
 ------
 PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
 WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+@media (max-width: 420px) {
+	.card-slider-item { width: 100%;}
+}  
+
+#btnsliderkiri{
+	font-size: 30px;	
+	color: white;
+}
+
+#btnsliderkanan{
+	font-size: 30px;
+	color: white;
+}
+
+a#btnkiri{
+	background-color: #2a2a2a;
+	top: 0;
+	bottom: 25;
+	left: 15;
+	width: 10%;
+}
+
+a#btnkanan{
+	background-color: #2a2a2a;
+	top: 0;
+	bottom: 25;
+	right: 15;
+	width: 10%;
+}
+
+#btnkiri2{
+	margin-left: -70;
+	color: #2a2a2a;
+	font-size: 30px;
+}
+
+#btnkanan2{
+	margin-right: -70;
+	color: #2a2a2a;
+	font-size: 30px;
+}
