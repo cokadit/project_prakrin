@@ -14,7 +14,9 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        return view('admin.project.index');
+        $project =  Project::all();
+
+        return view('admin.project.index',compact('project'));
     }
 
     /**
@@ -35,7 +37,18 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $project = Project::create($this->validateRequest());
+
+        $this->storeImage($project);
+        
+
+        // if ($this->validateRequest()->fails()) {
+        //     return redirect('/admin/project/create')
+        //                 ->withErrors($this->validateRequest())
+        //                 ->withInput();
+        // }
+        
+        return redirect('/admin/project');
     }
 
     /**
@@ -44,7 +57,7 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Project $project)
     {
         //
     }
@@ -55,7 +68,7 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Project $project)
     {
         //
     }
@@ -69,7 +82,7 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->storeImage($project);
     }
 
     /**
@@ -78,8 +91,32 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return redirect('/admin/project');
+    }
+
+    public function validateRequest()
+    {
+        return tap(request()->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required|file|image',
+        ]),
+        function (){
+            
+        }
+    );
+        
+    }
+
+    public function storeImage($project)
+    {
+        if(request()->has('image')){
+            $project->update([
+                'image'=> request()->image->store('uploads','public'),
+            ]);
+        }
     }
 }

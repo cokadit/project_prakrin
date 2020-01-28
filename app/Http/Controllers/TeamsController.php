@@ -82,4 +82,12 @@ class TeamsController extends Controller
     {
         //
     }
+    public function validateRequest()
+    {
+        return request()->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+        ]);
+    }
 }

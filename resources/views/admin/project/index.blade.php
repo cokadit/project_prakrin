@@ -31,21 +31,30 @@
                                         <th>Image</th>
                                         <th>Project Name</th>
                                         <th>Description</th>
-                                        <th class="text-center">Action</th>
+                                        <th >Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($project as $p)
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td><img src="https://images.unsplash.com/photo-1533134486753-c833f0ed4866?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" width="100"></td>
-                                        <td>Project Prakrin</td>
-                                        <td>Project untuk prakrin di maxsol</td>
-                                        <td class="text-center">
-                                            <a href="/admin/create" class="btn btn-icon btn-success" title="Detail"><i class="ft-eye"></i></a>
-                                            <a href="#" class="btn btn-icon btn-primary" title="Edit"><i class="ft-edit"></i></a>
-                                            <button type="submit" class="btn btn-icon btn-danger" title="Delete"><i class="ft-slash"></i></button>
+                                        @for ($i = 1; $i <10; $i++)
+                                            <th scope="row">{{$i}}</th>
+                                        @endfor
+                                        <td><img src="{{ asset('storage/'. $p->image) }}" width="100"></td>
+                                        <td>{{$p->name}}</td>
+                                        <td>{{$p->description}}</td>
+                                        <td>
+                                            <a href="/admin/create" class="btn btn-icon btn-success mr-1 float-left" title="Detail"><i class="ft-eye"></i></a>
+                                            <a href="#" class="btn btn-icon btn-primary mr-1 float-left" title="Edit"><i class="ft-edit"></i></a>
+                                            <form action="/admin/project/{{$p->id}}" method="POST" class="float-left">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-icon btn-danger" title="Delete"><i class="ft-slash"></i></button>
+                                            </form>
                                         </td>
-                                    </tr>
+                                    </tr>  
+                                    @endforeach
+                                    
                                 </tbody>
                             </table>
                         </div>

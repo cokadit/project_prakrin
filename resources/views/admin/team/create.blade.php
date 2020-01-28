@@ -24,7 +24,7 @@
             <div class="card-content collpase show">
                 <div class="card-body">
 
-                    <form class="form" action="/admin/team/store" method="POST">
+                    <form class="form" action="/admin/team/store" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row justify-content-md-center">
                             <div class="col-md-6">
@@ -33,6 +33,7 @@
                                         <div class="form-group col-12 mb-2">
                                             <label for="eventRegInput1">Name</label>
                                             <input type="text" id="eventRegInput1" class="form-control" placeholder="name" name="name" value="{{old('name')}}">
+                                            {{ @errors->first('name') }}
                                         </div>
                                     </div>
 
@@ -40,17 +41,18 @@
                                         <div class="form-group col-12 mb-2">
                                             <label for="eventRegInput2">Description</label>
                                             <input type="text" id="eventRegInput2" class="form-control" placeholder="title" name="description" value="{{old('description')}}">
+                                            {{@errors->first('description') }}
                                         </div>
                                     </div>
 
                                     <fieldset class="form-group">
                                         <label for="basicInputFile">With Browse button</label>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile01" name="image">
                                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                         </div>
                                     </fieldset>
-
+                                    {{@errors->first('image') }}
                                 </div>
                             </div>
                         </div>
