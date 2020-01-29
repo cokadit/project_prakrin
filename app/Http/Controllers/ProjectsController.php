@@ -41,13 +41,6 @@ class ProjectsController extends Controller
 
         $this->storeImage($project);
         
-
-        // if ($this->validateRequest()->fails()) {
-        //     return redirect('/admin/project/create')
-        //                 ->withErrors($this->validateRequest())
-        //                 ->withInput();
-        // }
-        
         return redirect('/admin/project');
     }
 
@@ -59,7 +52,7 @@ class ProjectsController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        return view('admin.project.show',compact('project'));
     }
 
     /**
@@ -70,7 +63,7 @@ class ProjectsController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.project.edit',compact('project'));
     }
 
     /**
@@ -80,9 +73,14 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Project $project)
     {
+        
+        $project->update($this->validateUpdate());
+
         $this->storeImage($project);
+
+        return redirect('admin/project');
     }
 
     /**
@@ -109,6 +107,21 @@ class ProjectsController extends Controller
         }
     );
         
+    }
+
+    public function validateUpdate()
+    {
+        return tap(request()->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]),
+        function (){
+            if(request()->hasFile('image')){
+                request()->validate([
+                    'image'=>'file|image'
+                ]);
+            }
+        });
     }
 
     public function storeImage($project)

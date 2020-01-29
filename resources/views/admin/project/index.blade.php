@@ -35,17 +35,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $i=1;
+                                    @endphp
                                     @foreach ($project as $p)
                                     <tr>
-                                        @for ($i = 1; $i <10; $i++)
-                                            <th scope="row">{{$i}}</th>
-                                        @endfor
-                                        <td><img src="{{ asset('storage/'. $p->image) }}" width="100"></td>
+                                        <th scope="row">{{$i}}</th>
+                                        <td><img src="{{ asset('storage/'. $p->image) }}" width="100px" height="100px" style="object-fit: cover;"></td>
                                         <td>{{$p->name}}</td>
                                         <td>{{$p->description}}</td>
                                         <td>
-                                            <a href="/admin/create" class="btn btn-icon btn-success mr-1 float-left" title="Detail"><i class="ft-eye"></i></a>
-                                            <a href="#" class="btn btn-icon btn-primary mr-1 float-left" title="Edit"><i class="ft-edit"></i></a>
+                                            <a href="/admin/project/{{$p->id}}" class="btn btn-icon btn-success mr-1 float-left" title="Detail"><i class="ft-eye"></i></a>
+                                            <a href="/admin/project/{{$p->id}}/edit" class="btn btn-icon btn-primary mr-1 float-left" title="Edit"><i class="ft-edit"></i></a>
                                             <form action="/admin/project/{{$p->id}}" method="POST" class="float-left">
                                                 @csrf
                                                 @method('DELETE')
@@ -53,6 +54,9 @@
                                             </form>
                                         </td>
                                     </tr>  
+                                    @php
+                                        $i++;
+                                    @endphp
                                     @endforeach
                                     
                                 </tbody>

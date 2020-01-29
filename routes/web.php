@@ -19,8 +19,12 @@ Route::view('/admin/deletecontent','admin.delete');
 // project
 Route::get('/admin/project','ProjectsController@index');
 Route::get('/admin/project/create','ProjectsController@create');
+Route::get('/admin/project/{project}','ProjectsController@show');
+Route::get('/admin/project/{project}/edit','ProjectsController@edit');
 Route::post('/admin/project/store','ProjectsController@store');
 Route::delete('/admin/project/{project}','ProjectsController@destroy');
+Route::patch('/admin/project/{project}','ProjectsController@update');
+
 
 
 // team
