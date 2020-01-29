@@ -14,7 +14,8 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        return view('admin.team.index');
+        $team = Team::all();
+        return view('admin.team.index',compact('team'));
     }
 
     /**
@@ -33,9 +34,13 @@ class TeamsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Team $team)
     {
-        //
+        $team = Team::create($this->validateRequest());
+
+        $this->storeImage($team);
+        
+        return redirect('/admin/team');
     }
 
     /**
@@ -44,9 +49,9 @@ class TeamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Team $team)
     {
-        //
+        return view('admin.team.show',compact('team'));
     }
 
     /**
@@ -55,9 +60,9 @@ class TeamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Team $team)
     {
-        //
+        return view('admin.team.edit',compact('team'));
     }
 
     /**
@@ -67,9 +72,13 @@ class TeamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Team $team)
     {
-        //
+        $team->update($this->validateUpdate());
+
+        $this->storeImage($team);
+
+        return redirect('admin/team');
     }
 
     /**
@@ -78,10 +87,12 @@ class TeamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($team)
     {
-        //
+        $team->delete();
+        return redirect('/admin/team');
     }
+
     public function validateRequest()
     {
         return request()->validate([
@@ -89,5 +100,29 @@ class TeamsController extends Controller
             'description' => 'required',
             'image' => 'required',
         ]);
+    }
+
+    public function validateUpdate()
+    {
+        return tap(request()->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]),
+        function (){
+            if(request()->hasFile('image')){
+                request()->validate([
+                    'image'=>'file|image'
+                ]);
+            }
+        });
+    }
+
+    public function storeImage($project)
+    {
+        if(request()->has('image')){
+            $project->update([
+                'image'=> request()->image->store('uploads','public'),
+            ]);
+        }
     }
 }

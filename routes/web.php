@@ -13,24 +13,26 @@
 
 Route::view('/','welcome');
 Route::view('/admin','admin.index');
-Route::view('/admin/createcontent','admin.create');
-Route::view('/admin/editcontent','admin.edit');
-Route::view('/admin/deletecontent','admin.delete');
 // project
-Route::get('/admin/project','ProjectsController@index');
-Route::get('/admin/project/create','ProjectsController@create');
-Route::get('/admin/project/{project}','ProjectsController@show');
-Route::get('/admin/project/{project}/edit','ProjectsController@edit');
-Route::post('/admin/project/store','ProjectsController@store');
-Route::delete('/admin/project/{project}','ProjectsController@destroy');
-Route::patch('/admin/project/{project}','ProjectsController@update');
+// Route::get('/admin/project','ProjectsController@index');
+// Route::get('/admin/project/create','ProjectsController@create');
+// Route::get('/admin/project/{project}','ProjectsController@show');
+// Route::get('/admin/project/{project}/edit','ProjectsController@edit');
+// Route::post('/admin/project/store','ProjectsController@store');
+// Route::delete('/admin/project/{project}','ProjectsController@destroy');
+// Route::patch('/admin/project/{project}','ProjectsController@update');
+Route::resource('admin/project','ProjectsController');
 
 
 
 // team
 Route::get('/admin/team','TeamsController@index');
 Route::get('/admin/team/create','TeamsController@create');
+Route::get('/admin/team/{team}','TeamsController@show');
+Route::get('/admin/team/{team}/edit','TeamsController@edit');
 Route::post('/admin/team/store','TeamsController@store');
+Route::delete('/admin/team/{team}','TeamsController@destroy');
+Route::patch('/admin/team/{team}','TeamsController@update');
 
 Auth::routes();
 
