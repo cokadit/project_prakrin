@@ -43,7 +43,10 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admins/asset/assets/css/style.css')}}">
     <!-- END: Custom CSS-->
     {{-- jquery --}}
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <!-- END: Head-->
 
@@ -101,6 +104,7 @@
 
 
 {{-- sweet alert --}}
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 @include('sweetalert::alert')
 </body>
