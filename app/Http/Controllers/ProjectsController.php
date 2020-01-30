@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Project;
 
@@ -14,7 +15,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $project =  Project::all();
+        $project =  Project::all();  
 
         return view('admin.project.index',compact('project'));
     }
@@ -29,19 +30,14 @@ class ProjectsController extends Controller
         return view('admin.project.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
         $project = Project::create($this->validateRequest());
 
         $this->storeImage($project);
         
-        return redirect('/admin/project');
+        return redirect('/admin/project')->withSuccessMessage('Successfully Added');
     }
 
     /**
@@ -66,13 +62,7 @@ class ProjectsController extends Controller
         return view('admin.project.edit',compact('project'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request,Project $project)
     {
         
@@ -80,7 +70,7 @@ class ProjectsController extends Controller
 
         $this->storeImage($project);
 
-        return redirect('admin/project');
+        return redirect('admin/project')->withSuccessMessage('Successfully Update the Data');
     }
 
     /**

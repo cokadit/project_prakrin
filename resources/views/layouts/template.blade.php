@@ -42,7 +42,8 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('admins/asset/assets/css/style.css')}}">
     <!-- END: Custom CSS-->
-
+    {{-- jquery --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 </head>
 <!-- END: Head-->
 
@@ -70,8 +71,9 @@
 <div class="drag-target"></div>
 
 <!-- BEGIN: Footer-->
-<!-- END: Footer-->
+@yield('footer')
 
+<!-- END: Footer-->
 
 <!-- BEGIN: Vendor JS-->
 <script src="{{asset('admins/asset/app-assets/vendors/js/vendors.min.js')}}"></script>
@@ -97,6 +99,10 @@
 <script type="text/javascript" src="https://cdn.shopify.com/s/files/1/2979/3338/files/UGC_-_new_v.3.js"></script>
 <script type="text/javascript" src="https://cdn.shopify.com/s/files/1/2979/3338/files/UGC-js-2.0-min.js"></script> 
 
+
+{{-- sweet alert --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+@include('sweetalert::alert')
 </body>
 <!-- END: Body-->
 

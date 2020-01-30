@@ -15,6 +15,7 @@ class TeamsController extends Controller
     public function index()
     {
         $team = Team::all();
+
         return view('admin.team.index',compact('team'));
     }
 
@@ -40,7 +41,7 @@ class TeamsController extends Controller
 
         $this->storeImage($team);
         
-        return redirect('/admin/team');
+        return redirect('/admin/team')->withSuccessMessage('Successfully Added');
     }
 
     /**
@@ -78,7 +79,7 @@ class TeamsController extends Controller
 
         $this->storeImage($team);
 
-        return redirect('admin/team');
+        return redirect('admin/team')->withSuccessMessage('Successfully Edit the Data');
     }
 
     /**

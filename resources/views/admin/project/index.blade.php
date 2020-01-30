@@ -47,10 +47,11 @@
                                         <td>
                                             <a href="/admin/project/{{$p->id}}" class="btn btn-icon btn-success mr-1 float-left" title="Detail"><i class="ft-eye"></i></a>
                                             <a href="/admin/project/{{$p->id}}/edit" class="btn btn-icon btn-primary mr-1 float-left" title="Edit"><i class="ft-edit"></i></a>
+                                            {{-- <a href="#" class="btn btn-icon btn-danger mr-1 float-left btndelete" id="btndelete" title="Edit" project-name="{{$p->name}}" project-id={{$p->id}}><i class="ft-slash"></i></a> --}}
                                             <form action="/admin/project/{{$p->id}}" method="POST" class="float-left">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-icon btn-danger" title="Delete"><i class="ft-slash"></i></button>
+                                                <button type="submit" class="btn btn-icon btn-danger" title="Delete" id="btndelete"><i class="ft-slash"></i></button>
                                             </form>
                                         </td>
                                     </tr>  
@@ -68,3 +69,34 @@
         </div>
     </div>
 @endsection
+
+{{-- @section('footer')
+    <script type="text/javascript">
+        $('.btndelete').click(function(){
+           var project_name = $(this).attr('project-name');
+           var project_id = $(this).attr('project-id');
+           Swal.fire({
+              title: 'Are you sure?',
+              text: "Are you sure want to delete "+project_name + "?",
+              icon: 'warning',
+              dangerMode:true,
+              showCancelButton: true,
+              confirmButtonColor: '#d33',
+              cancelButtonColor: '#3085d6',
+              confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+              if (result.value) {
+                fetch('/admin/project/'+project_id,{
+                    method: 'DELETE';
+                })
+                
+                Swal.fire(
+                  'Deleted!',
+                  'Your file has been deleted.',
+                  'success'
+                )
+              }
+            })
+        })
+    </script>
+@endsection --}}
