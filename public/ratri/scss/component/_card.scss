@@ -1,0 +1,59 @@
+.card{
+    perspective: 150rem;
+    position: relative;
+    height: 52rem;
+
+    &__side{
+        height: 52rem;
+        transition: all .8s ease;
+        border-radius: 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+
+        &--front{
+            background-color: $color-white;
+        }
+
+        &--back{
+            transform: rotateY(180deg);
+            background-image: linear-gradient(to right bottom, $blue-light, $blue);
+        }
+    }
+    
+    &:hover &__side--front{
+        transform: rotateY(-180deg); 
+    }
+
+    &:hover &__side--back{
+        transform: rotateY(0deg); 
+    }
+    
+    //back style
+    &__cta{
+        @include absCenter;
+        width: 90%;
+        text-align: center;
+    }
+
+    &__price-box{
+        text-align: center;
+        margin-bottom: 8rem;
+        color: $color-white;
+    }
+
+    &__price-only{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+
+    &__price-value{
+        font-size: 6rem;
+        font-weight: 200;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+}

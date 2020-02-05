@@ -1,0 +1,47 @@
+.header{
+    height: 100vh;
+    position: relative;
+
+    &__text-box{
+        position: absolute;
+        top: 50%;
+        left: 40px;
+        transform: translateY(-50%);
+        
+        @include respond(tab-port) {
+            top: 60%;
+        }
+        
+        @include respond(mobile) {
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+    }
+
+    &__img-1{
+        height: 500px;
+        position: absolute;
+        top: 50%;
+        right: 40px;
+        transform: translateY(-50%);
+        z-index: 1;
+
+        @include respond(tab-port) {
+            display: none;
+        }
+    }
+
+    &__logo-box{
+        position: absolute;
+        top: 40px;
+        left: 40px;
+    }
+
+    &__logo{
+        height: 35px;
+    }
+
+}

@@ -22,6 +22,9 @@ Route::post('/admin/project/store','ProjectsController@store');
 Route::delete('/admin/project/{project}/','ProjectsController@destroy');
 Route::patch('/admin/project/{project}','ProjectsController@update');
 
+// ratri
+Route::view('/ratriprakrin','ratri.index');
+
 
 
 

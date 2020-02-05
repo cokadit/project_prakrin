@@ -1,0 +1,20 @@
+.section-about,
+.section-service,
+.section-project,
+.section-team,
+.section-contact{
+    background-color: $color-white;
+    padding: 5rem 4rem;
+}
+.description{
+    width: 450px;
+    margin: 0 auto;
+
+    @include respond(tab-port) {
+        width: 100%;
+    }
+}
+.footer{
+    padding: 2rem 4rem;
+}
+
