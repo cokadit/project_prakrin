@@ -29,6 +29,10 @@
         transform: translateY(-50%);
         z-index: 1;
 
+        @include respond(tab-land) {
+            height: 400px;
+        }
+
         @include respond(tab-port) {
             display: none;
         }

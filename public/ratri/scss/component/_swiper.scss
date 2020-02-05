@@ -2,9 +2,18 @@
     margin-bottom: 6rem;
     transition: all .3s;
     position: relative;
+
+    @include respond(tab-port) {
+        margin-bottom: 0rem;
+    }
     &__photo{
         width: 60%;
         margin-right: 8rem;
+
+        @include respond(mobile) {
+            width: 70%;
+            margin-right: 2.5rem;
+        }
     }
 
     &__text{
@@ -15,6 +24,11 @@
         top: 50%;
         left: 25%;
         transform: translate(-50%,-50%);
+
+        @include respond(mobile) {
+            left: 30%;
+            font-size: 3rem;
+        }
         
     }
 

@@ -13,8 +13,24 @@
             transition: all .3s;
             width: 49%;
 
+            @include respond(mobile) {
+                width: 48%;
+            }
+
             &:not(:last-child){
                 margin-right: .7rem;
+
+                @include respond(tab-land) {
+                    margin-right: .5rem;
+                }
+
+                @include respond(tab-port) {
+                    margin-right: 1.3rem;
+                }
+
+                @include respond(mobile) {
+                    margin-right: 1.2rem;
+                }
             }
     
             &:focus:invalid{
@@ -60,4 +76,15 @@
         }
     }
     
+}
+
+.iframe{
+
+    @include respond(tab-port) {
+        height: 500px;
+    }
+
+    @include respond(mobile) {
+        height: 200px;
+    }
 }

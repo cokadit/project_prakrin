@@ -286,8 +286,6 @@
                         </div>
 
                     </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
                     <!-- Add Arrows -->
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -323,7 +321,7 @@
             
             <div class="row">
                 <div class="col-1-of-2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.1544086808703!2d115.19217661435076!3d-8.6768623937656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23f71c4f5fb67%3A0x620f6c5f25e3bf33!2sMaxsol!5e0!3m2!1sid!2sid!4v1580802711973!5m2!1sid!2sid" width="550" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.1544086808703!2d115.19217661435076!3d-8.6768623937656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23f71c4f5fb67%3A0x620f6c5f25e3bf33!2sMaxsol!5e0!3m2!1sid!2sid!4v1580802711973!5m2!1sid!2sid" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" class="iframe"></iframe>
                 </div>
                 <div class="col-1-of-2">
                     <h3 class="heading-tertiary">
@@ -431,10 +429,6 @@
             spaceBetween: 30,
             keyboard: {
                 enabled: true,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
             },
             navigation: {
                 nextEl: '.swiper-button-next',

@@ -5,6 +5,10 @@
 .section-contact{
     background-color: $color-white;
     padding: 5rem 4rem;
+
+    @include respond(tab-port) {
+        padding: 3rem 2rem;
+    }
 }
 .description{
     width: 450px;

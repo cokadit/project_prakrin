@@ -14,15 +14,18 @@
         height: auto;
     }
 
-    &__navigation{
-    }
-
     &__list{
         list-style: none;
+        
         &--2{
             display: flex;
             justify-content: flex-end;
             margin-top: 15.2rem;
+
+            @include respond(tab-port) {
+                justify-content: center;
+                margin-top: 3rem;
+            }
         }
     }
 
@@ -43,5 +46,6 @@
             font-size: 1.8rem;
             margin-left: 3rem;
         }
+        
     }
 }
