@@ -140,150 +140,26 @@
             <div class="u-right-text">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide swiper-project">
-                            <div class="swiper-project__back">
-                                <div class="swiper-project__back--1">&nbsp;</div>
+                        @php
+                            $i=1;
+                        @endphp
+                        @foreach ($project as $p)
+                            <div class="swiper-slide swiper-project">
+                                <div class="swiper-project__back">
+                                    <div class="swiper-project__back--{{$i}}">&nbsp;</div>
+                                </div>
+                                <div class="swiper-project__text">
+                                    <h4 class="judul">
+                                        {{$p->name}}
+                                    </h4>
+                                    <p class="paragraph">{{$p->description}}</p>
+                                </div>
+                                <img src="{{asset('storage/'.$p->image)}}" alt="Project 1" class="swiper-project__photo">
                             </div>
-                            <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Yokke
-                                </h4>
-                                <p class="paragraph">www.yokke.co.id</p>
-                            </div>
-                            <img src="{{asset('ratri/img/project1.png')}}" alt="Project 1" class="swiper-project__photo">
-                        </div>
-                        <div class="swiper-slide swiper-project">
-                            <div class="swiper-project__back">
-                                <div class="swiper-project__back--2">&nbsp;</div>
-                            </div>
-                            <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Gudang <br> garam <br> signature
-                                </h4>
-                                <p class="paragraph">Concept & Wireframing</p>
-                            </div>
-                            <img src="{{asset('ratri/img/project2.png')}}" alt="Project 2" class="swiper-project__photo">
-                        </div>
-                        <div class="swiper-slide swiper-project">
-                            <div class="swiper-project__back">
-                                <div class="swiper-project__back--3">&nbsp;</div>
-                            </div>
-                            <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Tokopedia
-                                </h4>
-                                <p class="paragraph">Hotlist Banners</p>
-                            </div>
-                            <img src="{{asset('ratri/img/project3.png')}}" alt="Project 3" class="swiper-project__photo">
-                        </div>
-                        <div class="swiper-slide swiper-project">
-                            <div class="swiper-project__back">
-                                <div class="swiper-project__back--4">&nbsp;</div>
-                            </div>
-                            <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Alphajwc
-                                </h4>
-                                <p class="paragraph">Internal Dashboard Enhancement</p>
-                            </div>
-                            <img src="{{asset('ratri/img/project4.png')}}" alt="Project 4" class="swiper-project__photo">
-                        </div>
-                        <div class="swiper-slide swiper-project">
-                            <div class="swiper-project__back">
-                                <div class="swiper-project__back--5">&nbsp;</div>
-                            </div>
-                            <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Kindairy
-                                </h4>
-                                <p class="paragraph">www.kindairy.com</p>
-                            </div>
-                            <img src="{{asset('ratri/img/project5.png')}}" alt="Project 5" class="swiper-project__photo">
-                        </div>
-                        <div class="swiper-slide swiper-project">
-                            <div class="swiper-project__back">
-                                <div class="swiper-project__back--6">&nbsp;</div>
-                            </div>
-                            <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Bmw <br> indonesia
-                                </h4>
-                                <p class="paragraph">www.bmw.co.id</p>
-                            </div>
-                            <img src="{{asset('ratri/img/project6.png')}}" alt="Project 6" class="swiper-project__photo">
-                        </div>
-                        <div class="swiper-slide swiper-project">
-                            <div class="swiper-project__back">
-                                <div class="swiper-project__back--7">&nbsp;</div>
-                            </div>
-                            <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Jim <br> models
-                                </h4>
-                                <p class="paragraph">www.jimmodels.com</p>
-                            </div>
-                            <img src="{{asset('ratri/img/project7.png')}}" alt="Project 7" class="swiper-project__photo">
-                        </div>
-                        <div class="swiper-slide swiper-project">
-                            <div class="swiper-project__back">
-                                <div class="swiper-project__back--8">&nbsp;</div>
-                            </div>
-                            <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Chatbot
-                                </h4>
-                                <p class="paragraph">www.masakapahariini.com</p>
-                            </div>
-                            <img src="{{asset('ratri/img/project8.png')}}" alt="Project 8" class="swiper-project__photo">
-                        </div>
-                        <div class="swiper-slide swiper-project">
-                            <div class="swiper-project__back">
-                                <div class="swiper-project__back--9">&nbsp;</div>
-                            </div>
-                            <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Petter <br> rabbit
-                                </h4>
-                                <p class="paragraph">www.caripetterrabbit.com</p>
-                            </div>
-                            <img src="{{asset('ratri/img/project9.png')}}" alt="Project 9" class="swiper-project__photo">
-                        </div>
-                        <div class="swiper-slide swiper-project">
-                            <div class="swiper-project__back">
-                                <div class="swiper-project__back--10">&nbsp;</div>
-                            </div>
-                            <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Holland <br> bakery
-                                </h4>
-                                <p class="paragraph">www.hollandbakery.co.id/shop</p>
-                            </div>
-                            <img src="{{asset('ratri/img/project10.png')}}" alt="Project 10" class="swiper-project__photo">
-                        </div>
-                        <div class="swiper-slide swiper-project">
-                            <div class="swiper-project__back">
-                                <div class="swiper-project__back--11">&nbsp;</div>
-                            </div>
-                            <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Emeron <br> lovely
-                                </h4>
-                                <p class="paragraph">www.emeronlovely.com</p>
-                            </div>
-                            <img src="{{asset('ratri/img/project11.png')}}" alt="Project 11" class="swiper-project__photo">
-                        </div>
-                        <div class="swiper-slide swiper-project">
-                            <div class="swiper-project__back">
-                                <div class="swiper-project__back--12">&nbsp;</div>
-                            </div>
-                            <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Sayit <br> withmcd
-                                </h4>
-                                <p class="paragraph">www.sayitwithmcd.com</p>
-                            </div>
-                            <img src="{{asset('ratri/img/project12.png')}}" alt="Project 12" class="swiper-project__photo">
-                        </div>
+                        @php
+                            $i++;
+                        @endphp
+                        @endforeach
 
                     </div>
                     <!-- Add Arrows -->
