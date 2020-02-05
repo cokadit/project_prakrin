@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PT. Maxsolusindo Jaya</title>
-    <link rel="shortcut icon" type="image/png" href="{{asset('ratri/img/icon.png')}}">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('ratri/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('ratri/font-awesome/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('ratri/swiper/css/swiper.min.css')}}">
-</head>
-<body>
+@extends('ratri.layouts.template')
 
+@section('content')
     <!-- --- awal-header --- -->
     <header class="header">
         <div class="header__logo-box">
@@ -127,64 +115,11 @@
         <!-- --- akhir-service --- -->
 
         <!-- --- awal-project --- -->
-        <section class="section-project">
-            <div class="u-center-text">
-                <h2 class="heading-secondary u-margin-bottom-small">
-                    Our projects
-                </h2>
-                <p class="paragraph u-margin-bottom-small">
-                    These are some of our latest portfolio which we are proud to show off.
-                </p>
-            </div>
-
-            <div class="u-right-text">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        @php
-                            $i=1;
-                        @endphp
-                        @foreach ($project as $p)
-                            <div class="swiper-slide swiper-project">
-                                <div class="swiper-project__back">
-                                    <div class="swiper-project__back--{{$i}}">&nbsp;</div>
-                                </div>
-                                <div class="swiper-project__text">
-                                    <h4 class="judul">
-                                        {{$p->name}}
-                                    </h4>
-                                    <p class="paragraph">{{$p->description}}</p>
-                                </div>
-                                <img src="{{asset('storage/'.$p->image)}}" alt="Project 1" class="swiper-project__photo">
-                            </div>
-                        @php
-                            $i++;
-                        @endphp
-                        @endforeach
-
-                    </div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-            </div>
-
-        </section>
+            @include('ratri.project')
         <!-- --- akhir-project --- -->
 
         <!-- --- awal team --- -->
-        <section class="section-team">
-            <div class="team u-center-text">
-                <h2 class="heading-secondary u-margin-bottom-small">
-                    Our team
-                </h2>
-                <p class="paragraph u-margin-bottom-big">
-                    Meet our energetics team dedicated to provide the best services you can acquire.
-                </p>
-
-                <iframe src="{{asset('ratri/slider.php')}}" frameborder="0" class="team__iframe"></iframe>
-
-            </div>
-        </section>
+            @include('ratri.team')
         <!-- --- akhir team --- -->
 
         <!-- --- awal contact --- -->
@@ -267,22 +202,20 @@
             </div>
         </div>
     </footer>
-
-        <script src="{{asset('ratri/font-awesome/js/all.min.js')}}"></script>
-        <script src="{{asset('ratri/swiper/js/swiper.min.js')}}"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            keyboard: {
-                enabled: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            
-        });
-    </script>
-</body>
-</html>
+@stop
+@section('script')
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        keyboard: {
+            enabled: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        
+    });
+</script>
+@endsection

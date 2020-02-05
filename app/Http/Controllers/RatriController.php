@@ -11,8 +11,15 @@ class RatriController extends Controller
     public function index()
     {
         $project = Project::all();
+        
+
+        return view('ratri.index',compact('project'));
+    }
+
+    public function slider()
+    {
         $team = Team::all();
 
-        return view('ratri.index',compact('project','team'));
+        return view('ratri.slider',compact('team'));
     }
 }

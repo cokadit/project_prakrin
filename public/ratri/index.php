@@ -145,7 +145,7 @@
                                 <div class="swiper-project__back--1">&nbsp;</div>
                             </div>
                             <div class="swiper-project__text">
-                                <h4 class="judul">
+                                <h4 class="judul  judul__break">
                                     Yokke
                                 </h4>
                                 <p class="paragraph">www.yokke.co.id</p>
@@ -157,8 +157,8 @@
                                 <div class="swiper-project__back--2">&nbsp;</div>
                             </div>
                             <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Gudang <br> garam <br> signature
+                                <h4 class="judul judul__break">
+                                    Gudang garam signature
                                 </h4>
                                 <p class="paragraph">Concept & Wireframing</p>
                             </div>
@@ -169,7 +169,7 @@
                                 <div class="swiper-project__back--3">&nbsp;</div>
                             </div>
                             <div class="swiper-project__text">
-                                <h4 class="judul">
+                                <h4 class="judul  judul__break">
                                     Tokopedia
                                 </h4>
                                 <p class="paragraph">Hotlist Banners</p>
@@ -181,7 +181,7 @@
                                 <div class="swiper-project__back--4">&nbsp;</div>
                             </div>
                             <div class="swiper-project__text">
-                                <h4 class="judul">
+                                <h4 class="judul judul__break">
                                     Alphajwc
                                 </h4>
                                 <p class="paragraph">Internal Dashboard Enhancement</p>
@@ -193,7 +193,7 @@
                                 <div class="swiper-project__back--5">&nbsp;</div>
                             </div>
                             <div class="swiper-project__text">
-                                <h4 class="judul">
+                                <h4 class="judul judul__break">
                                     Kindairy
                                 </h4>
                                 <p class="paragraph">www.kindairy.com</p>
@@ -205,8 +205,8 @@
                                 <div class="swiper-project__back--6">&nbsp;</div>
                             </div>
                             <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Bmw <br> indonesia
+                                <h4 class="judul judul__break">
+                                    Bmw indonesia
                                 </h4>
                                 <p class="paragraph">www.bmw.co.id</p>
                             </div>
@@ -217,8 +217,8 @@
                                 <div class="swiper-project__back--7">&nbsp;</div>
                             </div>
                             <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Jim <br> models
+                                <h4 class="judul judul__break">
+                                    Jim models
                                 </h4>
                                 <p class="paragraph">www.jimmodels.com</p>
                             </div>
@@ -229,7 +229,7 @@
                                 <div class="swiper-project__back--8">&nbsp;</div>
                             </div>
                             <div class="swiper-project__text">
-                                <h4 class="judul">
+                                <h4 class="judul judul__break">
                                     Chatbot
                                 </h4>
                                 <p class="paragraph">www.masakapahariini.com</p>
@@ -241,8 +241,8 @@
                                 <div class="swiper-project__back--9">&nbsp;</div>
                             </div>
                             <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Petter <br> rabbit
+                                <h4 class="judul judul__break">
+                                    Petter rabbit
                                 </h4>
                                 <p class="paragraph">www.caripetterrabbit.com</p>
                             </div>
@@ -253,8 +253,8 @@
                                 <div class="swiper-project__back--10">&nbsp;</div>
                             </div>
                             <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Holland <br> bakery
+                                <h4 class="judul judul__break">
+                                    Holland bakery
                                 </h4>
                                 <p class="paragraph">www.hollandbakery.co.id/shop</p>
                             </div>
@@ -265,8 +265,8 @@
                                 <div class="swiper-project__back--11">&nbsp;</div>
                             </div>
                             <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Emeron <br> lovely
+                                <h4 class="judul judul__break">
+                                    Emeron lovely
                                 </h4>
                                 <p class="paragraph">www.emeronlovely.com</p>
                             </div>
@@ -277,8 +277,8 @@
                                 <div class="swiper-project__back--12">&nbsp;</div>
                             </div>
                             <div class="swiper-project__text">
-                                <h4 class="judul">
-                                    Sayit <br> withmcd
+                                <h4 class="judul judul__break">
+                                    Sayit withmcd
                                 </h4>
                                 <p class="paragraph">www.sayitwithmcd.com</p>
                             </div>

@@ -24,6 +24,7 @@ Route::patch('/admin/project/{project}','ProjectsController@update');
 
 // ratri
 Route::get('/ratriprakrin','RatriController@index');
+Route::get('/ratrislider','RatriController@slider')->name('slider');
 
 
 

@@ -88,7 +88,7 @@ class TeamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($team)
+    public function destroy(Team $team)
     {
         $team->delete();
         return redirect('/admin/team');

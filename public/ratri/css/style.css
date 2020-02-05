@@ -107,6 +107,20 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+.judul__break {
+  width: 310px;
+  word-wrap: break-word;
+}
+@media only screen and (max-width: 56.25em) {
+  .judul__break {
+    width: 255px;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .judul__break {
+    width: 140px;
+  }
+}
 
 .u-center-text {
   text-align: center !important;
@@ -781,14 +795,4 @@ body {
 
 .footer {
   padding: 2rem 4rem;
-}
-
-#img-project{
-  object-fit: cover;
-  overflow: hidden;
-  margin-top: 10vh;
-  margin-right : 6vw;
-  width: 50vw;
-  max-height: 60vh ;
-  border-radius: 10px;
 }
