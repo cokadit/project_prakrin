@@ -51,7 +51,13 @@
 	    left: 0;
         z-index: -1;
         transition: all .4s;
-	}
+    }
+    
+    &--animated{
+        animation: moveInBottom 1s ease-out .75s;
+        animation-fill-mode: backwards;
+        animation-delay: 4s;
+    }
 }
 
 .btn-text{

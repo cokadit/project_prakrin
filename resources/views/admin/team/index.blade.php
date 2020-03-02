@@ -47,10 +47,10 @@
                                         <td>
                                             <a href="/admin/team/{{$t->id}}" class="btn btn-icon btn-success mr-1 float-left" title="Detail"><i class="ft-eye"></i></a>
                                             <a href="/admin/team/{{$t->id}}/edit" class="btn btn-icon btn-primary mr-1 float-left" title="Edit"><i class="ft-edit"></i></a>
-                                            <form action="/admin/team/{{$t->id}}" method="POST" class="float-left">
+                                            <form action="/admin/team/{{$t->id}}" method="POST" class="float-left deleteform2">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-icon btn-danger" title="Delete"><i class="ft-slash"></i></button>
+                                                <button type="button" class="btn btn-icon btn-danger delete2" project-name="{{$t->name}}" title="Delete"><i class="ft-slash"></i></button>
                                             </form>
                                         </td>
                                     </tr>  
@@ -67,4 +67,33 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer')
+    <script>
+
+        $(".delete2").click(function(){
+            var project_name = $(this).attr('project-name');
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "Are you sure want to delete "+project_name+ "?",
+                icon: 'warning',
+                dangerMode:true,
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value) {
+                $(".deleteform2").submit();
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }else{}
+            })
+        })
+    </script>
+
 @endsection

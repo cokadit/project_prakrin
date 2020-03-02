@@ -13,8 +13,11 @@
 </head>
 <body>
 
+@include('ratri.layouts.nav')
+
 @yield('content')
 
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="{{asset('ratri/font-awesome/js/all.min.js')}}"></script>
 <script src="{{asset('ratri/swiper/js/swiper.min.js')}}"></script>
 

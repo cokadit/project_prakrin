@@ -47,7 +47,8 @@
                                         <td>
                                             <a href="/admin/project/{{$p->id}}" class="btn btn-icon btn-success mr-1 float-left" title="Detail"><i class="ft-eye"></i></a>
                                             <a href="/admin/project/{{$p->id}}/edit" class="btn btn-icon btn-primary mr-1 float-left" title="Edit"><i class="ft-edit"></i></a>
-                                            <form action="/admin/project/{{$p->id}}" method="POST" class="float-left" id="deleteform">
+
+                                            <form action="/admin/project/{{$p->id}}" method="POST" class="float-left deleteform" id="deleteform">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="button" class="btn btn-icon btn-danger delete" title="Delete" id="delete" project-name="{{$p->name}}"><i class="ft-slash"></i></button>
@@ -73,7 +74,7 @@
 @section('footer')
     <script>
 
-        $('.delete').click(function(){
+        $(".delete").click(function(){
             var project_name = $(this).attr('project-name');
             Swal.fire({
                 title: 'Are you sure?',
@@ -86,8 +87,7 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.value) {
-                $("#deleteform").submit();
-
+                $(".deleteform").submit();
                 Swal.fire(
                     'Deleted!',
                     'Your file has been deleted.',

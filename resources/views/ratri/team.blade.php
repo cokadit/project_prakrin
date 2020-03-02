@@ -1,4 +1,4 @@
-<section class="section-team">
+<section class="section-team" id="team">
     <div class="team u-center-text">
         <h2 class="heading-secondary u-margin-bottom-small">
             Our team

@@ -1,6 +1,15 @@
 @extends('ratri.layouts.template')
 
 @section('content')
+    <!-- --- awal loader --- -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__circle"></div>
+            <div class="loader__circle"></div>
+        </div>
+    </div>
+    <!-- --- akhir loader --- -->
+
     <!-- --- awal-header --- -->
     <header class="header">
         <div class="header__logo-box">
@@ -9,13 +18,13 @@
         <div class="header__text-box">
             <h1 class="heading-primary u-margin-bottom-medium">
                 <span class="heading-primary--main">pride.</span>
-                <span class="heading-primary--main">creative.</span>
+                <span class="heading-primary--sub">creative.</span>
                 <span class="heading-primary--main">in every pixel.</span>
             </h1>
             <a href="#" class="btn btn--blue btn--animated">Load more</a>
         </div>
         <div class="header__img-box">
-            <img src="{{asset('ratri/img/banner.png')}}" alt="" class="header__img-1">
+            <img src="img/banner.png" alt="" class="header__img-1">
             <div class="kotak">&nbsp;</div>
         </div>
     </header>
@@ -24,7 +33,7 @@
     <main>
 
         <!-- --- awal-about --- -->
-        <section class="section-about">
+        <section class="section-about" id="about">
 
             <div class="row">
                 <div class="col-1-of-2">
@@ -60,7 +69,7 @@
 
 
         <!-- --- awal-service --- -->
-        <section class="section-service">
+        <section class="section-service" id="service">
             <div class="row">
                 <div class="col-1-of-2">
                     <div class="u-center-text">
@@ -123,7 +132,7 @@
         <!-- --- akhir team --- -->
 
         <!-- --- awal contact --- -->
-        <section class="section-contact">
+        <section class="section-contact" id="contact">
             <div class="u-center-text">
                 <h2 class="heading-secondary u-margin-bottom-medium">
                     Contact Us
@@ -156,9 +165,10 @@
         <!-- --- akhir contact --- -->
     </main>
 
+    <!-- --- awal footer --- -->
     <footer class="footer">
         <div class="footer__logo-box">
-            <img src="{{asset('ratri/img/logo.png')}}" alt="Full logo" class="footer__logo">
+            <img src="img/logo.png" alt="Full logo" class="footer__logo">
         </div>
         <div class="row">
             <div class="col-1-of-2">
@@ -202,8 +212,10 @@
             </div>
         </div>
     </footer>
+    <!-- --- akhir footer --- -->
 @stop
 @section('script')
+<!-- --- awal-slider --- -->
 <script>
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 1,
@@ -218,4 +230,23 @@
         
     });
 </script>
+<!-- --- akhir-slider --- -->
+
+<!-- --- awal-menu-active --- -->
+<script>
+    $(document).on('click', 'ul li', function(){
+        $(this).addClass('active').siblings().removeClass('active')
+    })
+</script>
+<!-- --- akhir-menu-active --- -->
+
+<!-- --- awal-loader --- -->
+<script>
+    $(document).ready(function(){
+        setTimeout(function() {
+            $(".preloader").fadeOut();
+        }, 4000);
+    })
+</script>
+<!-- --- awal-loader --- -->
 @endsection

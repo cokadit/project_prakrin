@@ -6,7 +6,9 @@
     box-sizing: border-box;
 }
 html{
+    scroll-behavior: smooth;
     font-size: 62.5%;
+    animation: fade 3s;
 
     @include respond(tab-land) {
         font-size: 56.25%; //1rem = 9px, 9/16 = 50%

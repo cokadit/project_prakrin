@@ -1,4 +1,4 @@
-<section class="section-project">
+<section class="section-project" id="project">
     <div class="u-center-text">
         <h2 class="heading-secondary u-margin-bottom-small">
             Our projects
